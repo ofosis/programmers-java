@@ -1,3 +1,30 @@
+***** 못 푼 문제! 필히 다시 풀 것 ****************************
+***************************************************************
+내가 시도하려했던것ㅠ
+	public int[][] solution(int[][] data, String ext, int val_ext, String sort_by) {
+        List<Integer> list=new ArrayList<Integer>();
+        Long[] maxcode=new Long[100001];   
+        String[] choice= {"code","date","maximum","remain"};
+        int standard=Arrays.asList(choice).indexOf(ext);
+        int sb=Arrays.asList(choice).indexOf(sort_by);
+        for(int i=0; i<data.length; i++) {
+        		if(data[i][standard]<val_ext) {
+        			list.add(data[i][sb]);
+        			maxcode[data[i][sb]]=(long) i;
+        		}
+        }
+        Collections.sort(list);
+        int[][] answer = new int[list.size()][4];
+        for(int i=0; i<answer.length; i++) {
+        	int max=maxcode[list.get(i)].intValue();
+        	answer[i][0]=data[max][0];
+        	answer[i][1]=data[max][1];
+        	answer[i][2]=data[max][2];
+        	answer[i][3]=list.get(i);
+        }
+        return answer;
+    }
+******************************************************************
 # [level 1] [PCCE 기출문제] 10번 / 데이터 분석 - 250121 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250121) 
