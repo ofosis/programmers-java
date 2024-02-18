@@ -1,14 +1,18 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int num=sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int num=Integer.parseInt(br.readLine());
 		for(int i=0; i<num; i++) {
-			int H=sc.nextInt();
-			int W=sc.nextInt();
-			int customer=sc.nextInt();
+			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+			int H=Integer.parseInt(st.nextToken());
+			int W=Integer.parseInt(st.nextToken());
+			int customer=Integer.parseInt(st.nextToken());
 			int room;
 			int no;
 			if(customer%H==0) {
